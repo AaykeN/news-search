@@ -27,7 +27,10 @@ function App() {
         <Router>
           <NewsContextProvider>
             <Header />
-            <Container maxWidth="xl" sx={{ marginTop: "20px" }}>
+            <Container
+              maxWidth="xl"
+              sx={{ marginTop: "20px", marginBottom: "40px" }}
+            >
               <DisplayChips />
               <Routes>
                 <Route path="/" element={<Home />} />

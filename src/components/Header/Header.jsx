@@ -17,6 +17,7 @@ import {
 import "./Header.css";
 import { useTheme } from "@mui/material/styles";
 import logo from "../../images/logo2.png";
+import logoMobile from "../../images/logoMobile.png";
 import SearchIcon from "@mui/icons-material/Search";
 import { useNewsContext } from "../../context/NewsContext";
 import Searchbar from "../Searchbar/Searchbar";
@@ -39,7 +40,26 @@ const Header = () => {
                 component="img"
                 src={logo}
                 alt="logo"
-                sx={{ width: "100px", height: "auto" }}
+                sx={{
+                  width: "100px",
+                  height: "auto",
+                  [theme.breakpoints.down("sm")]: {
+                    display: "none",
+                  },
+                }}
+              />
+              <Box
+                component="img"
+                src={logoMobile}
+                alt="logo"
+                sx={{
+                  width: "40px",
+                  height: "auto",
+                  display: "none",
+                  [theme.breakpoints.down("sm")]: {
+                    display: "flex",
+                  },
+                }}
               />
             </Box>
           </Link>
