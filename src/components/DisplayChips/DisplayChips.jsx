@@ -1,4 +1,4 @@
-import { Chip, Stack } from "@mui/material";
+import { Chip, Divider, Stack } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper";
 import "swiper/css";
@@ -18,45 +18,48 @@ const DisplayChips = () => {
   };
 
   return (
-    <Stack
-      direction="row"
-      spacing={4}
-      sx={{
-        position: "sticky",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-      }}
-    >
-      <Swiper
-        slidesPerView="auto"
-        spaceBetween={30}
-        freeMode
-        centeredSlidesBounds
-        modules={[FreeMode]}
-        className="flex overflow-x-hidden"
+    <>
+      <Stack
+        direction="row"
+        spacing={4}
+        sx={{
+          position: "sticky",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
       >
-        {newsCategories.map((category, index) => (
-          <SwiperSlide style={{ width: "auto", height: "auto" }}>
-            <Chip
-              disableRipple
-              key={index}
-              label={category.label}
-              Small
-              variant={keyWord === category.value ? "filled" : "outlined"}
-              onClick={() => handleClick(category.value)}
-              sx={{
-                padding: "none",
-                bgcolor: keyWord === category.value ? "#f8ece2" : "",
-                border: "none",
-                color: keyWord === category.value ? "#FF7800" : "",
-              }}
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-      <Searchbar displaySmallScreen="none" displayLargeScreen="block" />
-    </Stack>
+        <Swiper
+          slidesPerView="auto"
+          spaceBetween={30}
+          freeMode
+          centeredSlidesBounds
+          modules={[FreeMode]}
+          className="flex overflow-x-hidden"
+        >
+          {newsCategories.map((category, index) => (
+            <SwiperSlide style={{ width: "auto", height: "auto" }}>
+              <Chip
+                disableRipple
+                key={index}
+                label={category.label}
+                Small
+                variant={keyWord === category.value ? "filled" : "outlined"}
+                onClick={() => handleClick(category.value)}
+                sx={{
+                  padding: "none",
+                  bgcolor: keyWord === category.value ? "#f8ece2" : "",
+                  border: "none",
+                  color: keyWord === category.value ? "#FF7800" : "",
+                }}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <Searchbar displaySmallScreen="none" displayLargeScreen="block" />
+      </Stack>
+      <Divider sx={{ margin: "18px 0 18px 0" }} />
+    </>
   );
 };
 

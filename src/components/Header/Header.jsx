@@ -16,19 +16,15 @@ import {
 } from "@mui/material";
 import "./Header.css";
 import { useTheme } from "@mui/material/styles";
-
 import logo from "../../images/logo2.png";
 import SearchIcon from "@mui/icons-material/Search";
 import { useNewsContext } from "../../context/NewsContext";
 import Searchbar from "../Searchbar/Searchbar";
+import { Link } from "react-router-dom";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
 const Header = () => {
   const theme = useTheme();
-
-  const { handleSetKeyword, handleSubmitSearch, handleLogout } =
-    useNewsContext();
-
-  const localStorageUserName = localStorage.getItem("userName");
   return (
     <AppBar className="header__AppBar" position="static">
       <Container maxWidth="xl">
@@ -37,33 +33,57 @@ const Header = () => {
           variant="regular"
           disableGutters={true}
         >
-          <Box display="flex" alignItems="center" gap={3}>
-            <Box
-              component="img"
-              src={logo}
-              alt="logo"
-              sx={{ width: "100px", height: "auto" }}
-            />
-          </Box>
+          <Link to="/">
+            <Box display="flex" alignItems="center">
+              <Box
+                component="img"
+                src={logo}
+                alt="logo"
+                sx={{ width: "100px", height: "auto" }}
+              />
+            </Box>
+          </Link>
 
-          <Box
-            sx={{
-              display: "block",
-              [theme.breakpoints.down("lg")]: {
-                display: "none",
-              },
-            }}
-          >
-            <Typography variant="body2" color="black">
-              {new Date().toLocaleDateString("en-US", {
-                weekday: "long",
-                day: "numeric",
-                month: "long",
-                year: "numeric",
-              })}
-            </Typography>
+          <Box gap={3} display="flex" alignItems="center">
+            <Searchbar displayLargeScreen="none" displaySmallScreen="block" />
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                [theme.breakpoints.down("lg")]: {
+                  display: "none",
+                },
+              }}
+            >
+              <Typography variant="body2" color="#252525">
+                {new Date().toLocaleDateString("en-US", {
+                  weekday: "long",
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })}
+              </Typography>
+            </Box>
+            <Link
+              to="/likes"
+              style={{
+                display: "flex",
+              }}
+            >
+              <FavoriteBorderIcon sx={{ color: "black" }} />
+            </Link>
           </Box>
-          {/* 
+        </Toolbar>
+      </Container>
+    </AppBar>
+  );
+};
+
+export default Header;
+
+{
+  /* 
           <Box
             sx={{
               display: "block",
@@ -97,12 +117,5 @@ const Header = () => {
                 size="small"
               />
             </form>
-          </Box> */}
-          <Searchbar displayLargeScreen="none" displaySmallScreen="block" />
-        </Toolbar>
-      </Container>
-    </AppBar>
-  );
-};
-
-export default Header;
+          </Box> */
+}
