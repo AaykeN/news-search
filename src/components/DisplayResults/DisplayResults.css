@@ -1,0 +1,29 @@
+.displayResults__heading {
+  font-weight: 600 !important;
+  margin-bottom: 32px !important;
+  font-size: 18px !important;
+  line-height: 24px !important;
+}
+
+.displayResults__container {
+  text-align: center !important;
+  min-height: 300px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+.displayResults__linearProgress {
+  width: 100%;
+  margin: 34px 0 34px 0;
+}
+
+.displayResults__box {
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+.displayResults__box-button {
+  margin: 16px 0 16px 0 !important;
+}

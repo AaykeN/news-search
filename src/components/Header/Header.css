@@ -1,0 +1,44 @@
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+  padding-right: 0 !important;
+}
+
+.header__AppBar {
+  background-color: white !important;
+  border: solid 1px rgba(0, 0, 0, 0.12) !important;
+  box-shadow: none !important;
+}
+
+.header__Toolbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0 8px 0 !important;
+}
+
+.header__textField {
+  max-width: 450px !important;
+  width: 100% !important;
+  border-radius: 10px !important;
+  padding: 0 !important;
+}
+
+.header__form {
+  width: 100% !important;
+  max-width: 450px !important;
+}
+
+.header__iconButton {
+  padding: 5px 8px !important;
+  border-radius: 10px !important;
+}
+
+.header__listItemText {
+  margin: 0 0 0 7px !important;
+}
+
+.header__listItemText-button {
+  padding: 0px !important;
+  justify-content: left !important;
+  text-transform: none !important;
+  min-width: 0 !important;
+  vertical-align: top !important;
+}

@@ -1,0 +1,55 @@
+.css-6hp17o-MuiList-root-MuiMenu-list {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
+  box-shadow: none !important;
+}
+
+.myFavouritePanel__heading {
+  font-weight: 600 !important;
+  font-size: 18px !important;
+}
+
+.myFavouritePanel__box {
+  display: flex;
+  justify-content: space-between !important;
+  align-items: center;
+}
+
+.myFavouritePanel__card {
+  display: flex !important;
+  margin-bottom: 30px !important;
+  height: 95px !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+.myFavouritePanel__cardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between !important;
+  position: relative !important;
+  max-width: 90% !important;
+  padding: 0 !important;
+}
+
+.myFavouritePanel__cardActionArea-box {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.myFavouritePanel__title {
+  line-height: normal !important;
+  font-weight: 700 !important;
+  margin-bottom: 5px !important;
+  min-height: 65px !important;
+  margin: 0 !important;
+}
+
+.myFavouritePanel__cardMedia-img {
+  width: 121px !important;
+  min-height: 100px !important;
+  object-fit: cover !important;
+}
