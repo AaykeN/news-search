@@ -41,3 +41,13 @@
   min-width: 0 !important;
   vertical-align: top !important;
 }
+
+@media (max-width: 960px) {
+  .header__textField {
+    max-width: 200px !important;
+  }
+
+  .header__form {
+    max-width: 200px !important;
+  }
+}

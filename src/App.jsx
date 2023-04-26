@@ -23,7 +23,6 @@ function App() {
         <Router>
           <NewsContextProvider>
             <Routes>
-              <Route path="/" element={<Login />} />
               <Route path="/home" element={<Home />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

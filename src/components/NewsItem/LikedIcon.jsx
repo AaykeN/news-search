@@ -43,7 +43,7 @@ const LikedIcon = ({ article }) => {
       type="submit"
       size="small"
       variant="plain"
-      sx={{ color: liked ? "red" : "inherit" }}
+      sx={{ color: liked ? "#ec5252" : "inherit" }}
     >
       {liked ? (
         <FavoriteIcon fontSize="inherit" />

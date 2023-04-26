@@ -12,7 +12,10 @@ import "./Newsletter.css";
 const Newsletter = () => {
   return (
     <>
-      <Box className="myFavouritePanel__box" sx={{ marginBottom: "20px" }}>
+      <Box
+        className="myFavouritePanel__box"
+        sx={{ marginBottom: "20px", position: "sticky" }}
+      >
         <Typography className="myFavouritePanel__heading">Join Us</Typography>
       </Box>
       <Paper
@@ -37,7 +40,6 @@ const Newsletter = () => {
           <Grid item xs={12}>
             <TextField
               sx={{ bgcolor: "white", borderRadius: "5px" }}
-              disableAnimation
               margin="normal"
               placeholder="Enter your email"
               size="small"

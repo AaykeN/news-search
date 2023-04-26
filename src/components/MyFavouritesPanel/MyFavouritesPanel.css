@@ -20,6 +20,7 @@
 
 .myFavouritePanel__card {
   display: flex !important;
+  justify-content: space-between !important;
   margin-bottom: 30px !important;
   height: 95px !important;
   box-shadow: none !important;
