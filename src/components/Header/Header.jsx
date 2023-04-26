@@ -13,9 +13,10 @@ import {
   ListItemText,
   InputAdornment,
   ListItemAvatar,
+  Box,
 } from "@mui/material";
 import "./Header.css";
-import logo from "../../images/logo.png";
+import logo from "../../images/logo2.png";
 import SearchIcon from "@mui/icons-material/Search";
 import { useNewsContext } from "../../context/NewsContext";
 
@@ -25,18 +26,18 @@ const Header = () => {
 
   const localStorageUserName = localStorage.getItem("userName");
   return (
-    <AppBar className="header__AppBar" position="static">
+    <AppBar className="header__AppBar" position="sticky">
       <Container maxWidth="xl">
         <Toolbar
           className="header__Toolbar"
           variant="regular"
           disableGutters={true}
         >
-          <CardMedia
+          <Box
+            src={logo}
             component="img"
-            sx={{ width: "115px" }}
-            image={logo}
-            alt="Paella dish"
+            alt="logo"
+            sx={{ width: "100px", height: "auto" }}
           />
 
           <form className="header__form" onSubmit={handleSubmitSearch}>
@@ -65,37 +66,16 @@ const Header = () => {
               size="small"
             />
           </form>
-
-          <Stack>
-            <ListItem sx={{ padding: "0" }}>
-              <ListItemAvatar sx={{ minWidth: "0" }}>
-                <Avatar
-                  src="https://cdn-icons-png.flaticon.com/512/186/186313.png"
-                  alt="avatarcd "
-                />
-              </ListItemAvatar>
-              <ListItemText
-                className="header__listItemText"
-                primary={
-                  <Typography variant="subtitle2" color="text.primary">
-                    Hey{" "}
-                    {localStorageUserName.charAt(0).toUpperCase() +
-                      localStorageUserName.slice(1)}
-                  </Typography>
-                }
-                secondary={
-                  <Button
-                    className="header__listItemText-button"
-                    onClick={handleLogout}
-                  >
-                    <Typography variant="caption" color="text.secondary">
-                      Sign Out
-                    </Typography>
-                  </Button>
-                }
-              />
-            </ListItem>
-          </Stack>
+          <Box>
+            <Typography variant="body2" color="black">
+              {new Date().toLocaleDateString("en-US", {
+                weekday: "long",
+                day: "numeric",
+                month: "long",
+                year: "numeric",
+              })}
+            </Typography>
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>

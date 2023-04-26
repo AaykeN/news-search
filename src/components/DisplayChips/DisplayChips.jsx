@@ -11,7 +11,7 @@ const DisplayChips = () => {
   };
 
   return (
-    <Stack direction="row" spacing={4} mb={3} overflow="auto">
+    <Stack direction="row" spacing={4} overflow="auto">
       {newsCategories.map((category, index) => (
         <Chip
           disableRipple

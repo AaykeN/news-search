@@ -7,11 +7,12 @@ import MyFavouritePanel from "../MyFavouritesPanel/MyFavouritePanel";
 import { useNewsContext } from "../../context/NewsContext";
 import { Navigate } from "react-router-dom";
 import DisplayChips from "../DisplayChips/DisplayChips";
+import Newsletter from "../Newsletter/Newsletter";
 
 const Home = () => {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <Container maxWidth="xl" sx={{ marginTop: "20px" }}>
         <DisplayChips />
         <Divider sx={{ margin: "18px 0 18px 0" }} />
@@ -22,6 +23,8 @@ const Home = () => {
           </Grid>
           <Grid item lg={3} sm={6}>
             <MyFavouritePanel style={{ overflowY: "scroll" }} />
+            <Divider sx={{ margin: "18px 0 18px 0" }} />
+            <Newsletter />
           </Grid>
         </Grid>
       </Container>

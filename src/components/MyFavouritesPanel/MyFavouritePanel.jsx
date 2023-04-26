@@ -30,13 +30,10 @@ const MyFavouritePanel = () => {
     <>
       <Box className="myFavouritePanel__box" sx={{ marginBottom: "32px" }}>
         <Typography className="myFavouritePanel__heading">
-          Your Favourites ({myFavouritesAmount})
+          Your Favourites
         </Typography>
         <MoreIcon />
       </Box>
-
-      {/* <Divider sx={{ margin: "18px 0 18px 0" }} /> */}
-
       {myFavouritesAmount === 0 ? (
         <Typography color="text.secondary" sx={{ textAlign: "center" }}>
           Nothing here yet
@@ -57,9 +54,7 @@ const MyFavouritePanel = () => {
                 >
                   <Typography
                     className="myFavouritePanel__title"
-                    component="div"
                     variant="body2"
-                    // fontSize={14}
                   >
                     {likedArticle.title.split(" ").slice(0, 13).join(" ") +
                       "..."}
