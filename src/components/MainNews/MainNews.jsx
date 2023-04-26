@@ -1,10 +1,12 @@
 import PersonIcon from "@mui/icons-material/Person";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { Typography, Card, Box, CardActionArea } from "@mui/material";
-import React from "react";
+import { useTheme } from "@mui/material/styles";
 import LikedIcon from "../NewsItem/LikedIcon";
 
 const MainNews = ({ article, index }) => {
+  const theme = useTheme();
+
   return (
     <CardActionArea
       target="_blank"
@@ -18,6 +20,12 @@ const MainNews = ({ article, index }) => {
           height: "550px",
           width: "100%",
           marginBottom: "32px",
+          [theme.breakpoints.down("lg")]: {
+            height: "500px",
+          },
+          [theme.breakpoints.down("sm")]: {
+            height: "470px",
+          },
         }}
       >
         <Box
@@ -69,12 +77,21 @@ const MainNews = ({ article, index }) => {
               padding: "26px",
               color: "#fff",
               zIndex: 1,
+              [theme.breakpoints.down("md")]: {
+                width: "100%",
+              },
             }}
           >
             <Typography
               variant="h4"
               marginBottom={1}
-              sx={{ fontWeight: "800" }}
+              sx={{
+                fontWeight: "800",
+                [theme.breakpoints.down("md")]: {
+                  width: "100%",
+                  fontSize: "1.8rem",
+                },
+              }}
             >
               {article.title}
             </Typography>
@@ -86,7 +103,16 @@ const MainNews = ({ article, index }) => {
             >
               {article.description}
             </Typography>
-            <Box display="flex" alignItems="center" gap={4}>
+            <Box
+              display="flex"
+              alignItems="center"
+              gap={4}
+              sx={{
+                [theme.breakpoints.down("md")]: {
+                  gap: "5px",
+                },
+              }}
+            >
               <Box display="flex" alignItems="center" marginRight={2}>
                 <CalendarMonthIcon
                   fontSize="small"

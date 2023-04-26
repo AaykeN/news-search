@@ -9,10 +9,15 @@ const LikedIcon = ({ article }) => {
   const { handleSetLike, setMyFavourites, myFavourites } = useNewsContext();
   const [liked, setLiked] = useState(false);
 
+  console.log(myFavourites);
+
   useEffect(() => {
     const isLiked =
       JSON.parse(localStorage.getItem("myFavourites"))?.some(
-        (item) => item.title === article.title || item.url === article.url
+        (item) =>
+          item.title === article.title &&
+          item.url === article.url &&
+          item.publishedAt === article.publishedAt
       ) || false;
     setLiked(isLiked);
   }, [article, myFavourites]);
