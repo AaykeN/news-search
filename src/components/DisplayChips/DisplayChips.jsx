@@ -7,10 +7,11 @@ import { useNewsContext } from "../../context/NewsContext";
 import { newsCategories } from "../../data/data";
 import { useTheme } from "@mui/material/styles";
 import Searchbar from "../Searchbar/Searchbar";
+import { Link, useLocation } from "react-router-dom";
 
 const DisplayChips = () => {
   const theme = useTheme();
-
+  const { pathname } = useLocation();
   const { setKeyWord, keyWord } = useNewsContext();
 
   const handleClick = (label) => {
@@ -39,20 +40,29 @@ const DisplayChips = () => {
         >
           {newsCategories.map((category, index) => (
             <SwiperSlide style={{ width: "auto", height: "auto" }}>
-              <Chip
-                disableRipple
-                key={index}
-                label={category.label}
-                Small
-                variant={keyWord === category.value ? "filled" : "outlined"}
-                onClick={() => handleClick(category.value)}
-                sx={{
-                  padding: "none",
-                  bgcolor: keyWord === category.value ? "#f8ece2" : "",
-                  border: "none",
-                  color: keyWord === category.value ? "#FF7800" : "",
-                }}
-              />
+              <Link to="/">
+                <Chip
+                  disableRipple
+                  key={index}
+                  label={category.label}
+                  Small
+                  variant={keyWord === category.value ? "filled" : "outlined"}
+                  onClick={() => handleClick(category.value)}
+                  sx={{
+                    fontWeight: "400",
+                    padding: "none",
+                    bgcolor:
+                      pathname === "/" && keyWord === category.value
+                        ? "#f8ece2"
+                        : "transparent",
+                    border: "none",
+                    color:
+                      pathname === "/" && keyWord === category.value
+                        ? "#FF7800"
+                        : "",
+                  }}
+                />
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>
