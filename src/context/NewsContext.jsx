@@ -13,7 +13,7 @@ export function NewsContextProvider({ children }) {
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(9);
-  const [keyWord, setKeyWord] = useState("trend");
+  const [keyWord, setKeyWord] = useState("a");
   const [URL, setURL] = useState("top-headlines?sources=bbc-news");
 
   useEffect(() => {

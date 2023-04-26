@@ -6,6 +6,7 @@ import {
   Typography,
   CardActions,
 } from "@mui/material";
+import noImage from "../../images/no-image.jpg";
 import "./NewsItem.css";
 import LikedIcon from "./LikedIcon";
 import { CardActionArea } from "@mui/material";
@@ -25,7 +26,7 @@ const NewsItem = ({ article }) => {
           <CardMedia
             component="img"
             height="184"
-            image={article.urlToImage}
+            image={article.urlToImage ? article.urlToImage : noImage}
             alt={article.title}
           />
 
