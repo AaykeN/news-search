@@ -7,7 +7,6 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-data.js
 news_search_login.txt
 backup
 node_modules
