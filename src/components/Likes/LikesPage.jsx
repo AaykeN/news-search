@@ -13,9 +13,7 @@ const LikesPage = () => {
   return (
     <>
       <Box className="myFavouritePanel__box" sx={{ marginBottom: "32px" }}>
-        <Typography
-          sx={{ fontWeight: "600", marginBottom: "32px", fontSize: "18px" }}
-        >
+        <Typography sx={{ fontWeight: "600", fontSize: "18px" }}>
           Your Favourites ({myFavouritesAmount})
         </Typography>
         <MoreIcon />

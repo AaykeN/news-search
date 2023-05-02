@@ -48,7 +48,6 @@ const MoreIcon = () => {
           <Button
             onClick={clearMyFavourites}
             variant="contained"
-            // color="error"
             disableElevation={true}
             sx={{
               maxHeight: "22px",
@@ -56,6 +55,9 @@ const MoreIcon = () => {
               height: "100%",
               bgcolor: "#FD7575",
               textTransform: "none",
+              "&:hover": {
+                bgcolor: "#f88f8f",
+              },
             }}
           >
             <Typography sx={{ fontSize: "11px", letterSpacing: "1px" }}>
