@@ -2,14 +2,12 @@ import { IconButton } from "@mui/material";
 import "./NewsItem.css";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNewsContext } from "../../context/NewsContext";
 
 const LikedIcon = ({ article }) => {
   const { handleSetLike, setMyFavourites, myFavourites } = useNewsContext();
   const [liked, setLiked] = useState(false);
-
-  console.log(myFavourites);
 
   useEffect(() => {
     const isLiked =

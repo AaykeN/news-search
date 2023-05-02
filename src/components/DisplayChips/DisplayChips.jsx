@@ -39,13 +39,11 @@ const DisplayChips = () => {
           className="flex overflow-x-hidden"
         >
           {newsCategories.map((category, index) => (
-            <SwiperSlide style={{ width: "auto", height: "auto" }}>
+            <SwiperSlide style={{ width: "auto", height: "auto" }} key={index}>
               <Link to="/">
                 <Chip
                   disableRipple
-                  key={index}
                   label={category.label}
-                  Small
                   variant={keyWord === category.value ? "filled" : "outlined"}
                   onClick={() => handleClick(category.value)}
                   sx={{
